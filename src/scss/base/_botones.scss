@@ -1,0 +1,12 @@
+.boton-morado{
+    @include boton($morado,block);
+}
+
+.boton-morado-inline-block{
+    @include boton($morado, inline-block);
+    
+}
+
+.btn-verde{
+    @include boton($verde,block)
+}
