@@ -1,5 +1,51 @@
 <?php 
     
+    require '../../includes/config/database.php';
+    $db = conectarDB();
+
+    //arreglo para los errores.
+    $errores = [];
+
+    $titulo = '';
+    $precio = '';
+    $descripcion = '';
+    $Usuarios_id = '';
+
+    //Se ejecuta al dar enviar en el boton.
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        
+        // insercion de datos a la base de datos
+        $titulo = $_POST['titulo'];
+        $precio = $_POST['precio'];
+        $descripcion = $_POST['descripcion'];
+        $Usuarios_id = $_POST['Usuarios_id'];
+
+        if(!$titulo){
+            $errores[] = "Debes añadir un titulo.";           
+        }
+
+        if(!$precio){
+            $errores[] = "Debes añadir un precio.";           
+        }
+        if(strlen ($descripcion) < 40 ) {
+            $errores[] = "Debes añadir minimo 40 caracteres en la descripción.";           
+        }
+        if(!$Usuarios_id){
+            $errores[] = "Debes añadir un instalador.";           
+        }
+
+        
+
+        //revisar que arreglo de errores este vacio.
+        if(empty($errores)){
+        //cargar valores a la base de datos.    
+        $query = " INSERT INTO instalaciones (titulo, precio,descripcion, Usuarios_id) VALUES('$titulo','$precio','$descripcion','$Usuarios_id') " ;
+
+        $resultado = mysqli_query($db, $query);
+        }
+        
+    }
+
     require '../../includes/funciones.php';
     incluirTemplate('header');
 ?>
@@ -8,27 +54,34 @@
         <h1>Crear</h1>
         <a href="/admin" class="boton boton-morado-inline-block">Volver</a>
 
+        <?php foreach($errores as $error): //Creado para mostrar los errores ?>
+            <div class="alerta error">
+            <?php echo $error; ?>
+            </div>
+        <?php endforeach;?>
 
-        <form class="formulario">
+
+        <form class="formulario" method="POST" action="/admin/instalaciones/crear.php">
 
             <fieldset>
                 <legend>
                     Informacion General
                 </legend>
                 <label for="titulo">Titulo:</label>
-                <input type="text" id="titulo" placeholder="Titulo de instalación" required >
+                <input type="text" id="titulo" placeholder="Titulo de instalación"  name="titulo" value="<?php echo $titulo;?>" >
                 <label for="precio">Precio:</label>
-                <input type="number" id="precio" placeholder="precio de instalación" required>
+                <input type="number" id="precio" placeholder="precio de instalación"  name="precio" value="<?php echo $precio;?>">
                 <label for="imagen">Imagen:</label>
-                <input type="file" id="imagen" accept="image/jpeg , image/png" required>
-                <label for="decripcion" required>Decripción:</label>
-                <textarea id="descripcion"></textarea>
+                <input type="file" id="imagen" accept="image/jpeg , image/png"  >
+                <label for="descripcion" >Decripción:</label>
+                <textarea id="descripcion"  name="descripcion"><?php echo $descripcion;?></textarea>
                 
             </fieldset>
 
             <fieldset>
                 <legend>instalador</legend>
-                <select>
+                <select name="Usuarios_id" value="<?php echo $Usuarios_id?>">
+                    <option value="">--Seleccionar--</option>
                     <option value="1">Alejandro</option>
                     <option value="2">Jesus</option>
                 </select>
