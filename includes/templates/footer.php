@@ -11,7 +11,7 @@
         <p class="copyright">Creado por Linda Moreno y Ruben <?php echo date('Y'); ?> &copy;</p> 
     </footer>
 
-    <script src="build/js/bundle.min.js"></script>
+    <script src="/build/js/bundle.min.js"></script>
 </body>
 
 </html>
