@@ -1,33 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blog</title>
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-
-<body>
-
-    <header class="header">
-        <div class="contenedor contenido-header">
-            <div class="barra">
-                <a href="/">
-                    <img src="build/img/Logo.svg" alt="">
-                </a>
-
-                <nav class="navegacion">
-                    <a href="nosotros.html">Nosotros</a>
-                    <a href="anuncios.html">Anuncios</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="contacto.html">Contacto</a>
-
-                </nav>
-            </div>
-
-        </div>
-    </header>
+<?php 
+    
+    require 'includes/funciones.php';
+    incluirTemplate('header');
+?>
 
     <main class="contenedor seccion contenido-centrado">
         <h1>Instalacion camara sencilla </h1>
@@ -39,8 +14,7 @@
         </picture>
 
         <div class="resumen-instalacion">
-
-            <p class="informacion-meta">Escrito el: <span>16/05/2025</span> por: <span>Admin</span> </p>
+            <p class="precio">$6,900.00 mxn</p>
 
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit labore ut cupiditate ad ea eum tempore
                 expedita minus quibusdam modi possimus illum molestiae, neque atque? Veniam enim cum alias itaque?
@@ -57,20 +31,6 @@
         </div>
     </main>
 
-    <footer class="footer seccion">
-        <div class="contenedor contenedor-footer">
-            <nav class="navegacion">
-                <a href="nosotros.html">Nosotros</a>
-                <a href="anuncios.html">Anuncios</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
-
-            </nav>
-        </div>
-        <p class="copyright">Creado por Linda Moreno y Ruben 2025 &copy;</p>
-    </footer>
-
-    <script src="build/js/bundle.min.js"></script>
-</body>
-
-</html>
+<?php 
+    incluirTemplate('footer');
+?>

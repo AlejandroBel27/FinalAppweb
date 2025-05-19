@@ -1,38 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SystemTech</title>
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-
-<body>
-
-    <header class="header inicio">
-        <div class="contenedor contenido-header">
-            <div class="barra">
-                <a href="/">
-                    <img src="build/img/Logo.svg" alt="">
-                </a>
-
-                <div class="mobile-menu">
-                    <img src="build/img/barras.svg" alt="icono resposive">
-                </div>
-
-                <nav class="navegacion">
-                    <a href="nosotros.html">Nosotros</a>
-                    <a href="anuncios.html">Anuncios</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="contacto.html">Contacto</a>
-
-                </nav>
-            </div>
-
-            <h1>Siente la seguridad con SystemTech</h1>
-        </div>
-    </header>
+<?php 
+    
+    require 'includes/funciones.php';
+    incluirTemplate('header', $inicio = true);
+?>
 
     <main class="contenedor seccion">
         <h1>Conocenos más</h1>
@@ -79,7 +49,7 @@
                     </p>
                     <p class="precio">$4,900.00 mxn</p>
 
-                    <a href="anuncio.html" class="boton-morado">
+                    <a href="anuncio.php" class="boton-morado">
                         Ver Instalacion
                     </a>
                 </div> <!--.contenido-anuncio-->
@@ -99,7 +69,7 @@
                     </p>
                     <p class="precio">$3,200.00 mxn</p>
 
-                    <a href="anuncio.html" class="boton-morado">
+                    <a href="anuncio.php" class="boton-morado">
                         Ver Instalacion
                     </a>
                 </div> <!--.contenido-anuncio-->
@@ -119,7 +89,7 @@
                     </p>
                     <p class="precio">$6,500.00 mxn</p>
 
-                    <a href="anuncio.html" class="boton-morado">
+                    <a href="anuncio.php" class="boton-morado">
                         Ver Instalacion
                     </a>
                 </div> <!--.contenido-anuncio-->
@@ -128,7 +98,7 @@
         </div><!--.contenedor-anuncios-->
 
         <div class="ver-todas">
-            <a href="anuncios.html" class="btn-verde">
+            <a href="anuncios.php" class="btn-verde">
                 Ver Todas
             </a>
         </div>
@@ -137,7 +107,7 @@
     <section class="imagen-contacto">
         <h2>Solicita tu cotizacion con nosotros</h2>
         <p>Llena el formulario y en breve un asesor te contactara</p>
-        <a href="contacto.html" class="boton-morado-inline-block">Contactanos</a>
+        <a href="contacto.php" class="boton-morado-inline-block">Contactanos</a>
     </section>
 
     <div class="contenedor seccion seccion-inferior">
@@ -154,7 +124,7 @@
                     </picture>
                 </div>
                 <div class="texto-entrada">
-                    <a href="entrada.html">
+                    <a href="entrada.php">
                         <h4>Instalacion de DVR en gabinete</h4>
                         <p class="informacion-meta">Escrito el: <span>16/05/2025</span> por: <span>Admin</span> </p>
                         <p>
@@ -173,7 +143,7 @@
                     </picture>
                 </div>
                 <div class="texto-entrada">
-                    <a href="entrada.html">
+                    <a href="entrada.php">
                         <h4>Instalacion de DVR sin gabinete</h4>
                         <p class="informacion-meta">Escrito el: <span>16/05/2025</span> por: <span>Admin</span> </p>
                         <p>
@@ -195,20 +165,6 @@
         </section>
     </div>
 
-    <footer class="footer seccion">
-        <div class="contenedor contenedor-footer">
-            <nav class="navegacion">
-                <a href="nosotros.html">Nosotros</a>
-                <a href="anuncios.html">Anuncios</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
-
-            </nav>
-        </div>
-        <p class="copyright">Creado por Linda Moreno y Ruben 2025 &copy;</p>
-    </footer>
-
-    <script src="build/js/bundle.min.js"></script>
-</body>
-
-</html>
+<?php 
+    incluirTemplate('footer');
+?>

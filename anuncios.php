@@ -1,33 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anuncios</title>
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-
-<body>
-
-    <header class="header">
-        <div class="contenedor contenido-header">
-            <div class="barra">
-                <a href="/">
-                    <img src="build/img/Logo.svg" alt="">
-                </a>
-
-                <nav class="navegacion">
-                    <a href="nosotros.html">Nosotros</a>
-                    <a href="anuncios.html">Anuncios</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="contacto.html">Contacto</a>
-
-                </nav>
-            </div>
-
-        </div>
-    </header>
+<?php 
+    
+    require 'includes/funciones.php';
+    incluirTemplate('header');
+?>
 
     <main class="contenedor seccion">
 
@@ -47,7 +22,7 @@
                     </p>
                     <p class="precio">$4,900.00 mxn</p>
 
-                    <a href="anuncio.html" class="boton-morado">
+                    <a href="anuncio.php" class="boton-morado">
                         Ver Instalacion
                     </a>
                 </div> <!--.contenido-anuncio-->
@@ -67,7 +42,7 @@
                     </p>
                     <p class="precio">$3,200.00 mxn</p>
 
-                    <a href="anuncio.html" class="boton-morado">
+                    <a href="anuncio.php" class="boton-morado">
                         Ver Instalacion
                     </a>
                 </div> <!--.contenido-anuncio-->
@@ -87,7 +62,7 @@
                     </p>
                     <p class="precio">$6,500.00 mxn</p>
 
-                    <a href="anuncio.html" class="boton-morado">
+                    <a href="anuncio.php" class="boton-morado">
                         Ver Instalacion
                     </a>
                 </div> <!--.contenido-anuncio-->
@@ -107,7 +82,7 @@
                     </p>
                     <p class="precio">$6,500.00 mxn</p>
 
-                    <a href="anuncio.html" class="boton-morado">
+                    <a href="anuncio.php" class="boton-morado">
                         Ver Instalacion
                     </a>
                 </div> <!--.contenido-anuncio-->
@@ -127,7 +102,7 @@
                     </p>
                     <p class="precio">$6,500.00 mxn</p>
 
-                    <a href="anuncio.html" class="boton-morado">
+                    <a href="anuncio.php" class="boton-morado">
                         Ver Instalacion
                     </a>
                 </div> <!--.contenido-anuncio-->
@@ -147,27 +122,13 @@
                     </p>
                     <p class="precio">$6,500.00 mxn</p>
 
-                    <a href="anuncio.html" class="boton-morado">
+                    <a href="anuncio.php" class="boton-morado">
                         Ver Instalacion
                     </a>
                 </div> <!--.contenido-anuncio-->
             </div><!--anuncio-->
     </main>
 
-    <footer class="footer seccion">
-        <div class="contenedor contenedor-footer">
-            <nav class="navegacion">
-                <a href="nosotros.html">Nosotros</a>
-                <a href="anuncios.html">Anuncios</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
-
-            </nav>
-        </div>
-        <p class="copyright">Creado por Linda Moreno y Ruben 2025 &copy;</p>
-    </footer>
-
-    <script src="build/js/bundle.min.js"></script>
-</body>
-
-</html>
+<?php 
+    incluirTemplate('footer');
+?>
