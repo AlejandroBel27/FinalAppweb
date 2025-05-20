@@ -18,16 +18,10 @@
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         
         // insercion de datos a la base de datos
-        //mysqli_real_escape_string nos sirve para que no nos inyecten SqlInyection.
-        $titulo = mysqli_real_escape_string($db , $_POST['titulo']); 
-        $precio =mysqli_real_escape_string($db , $_POST['precio']);
-        $descripcion = mysqli_real_escape_string($db , $_POST['descripcion']);
-        $Usuarios_id = mysqli_real_escape_string($db , $_POST['Usuarios_id']);
-
-        //Asignacion de variable a file
-        $imagen = $_FILES['imagen'];
-
-        
+        $titulo = $_POST['titulo'];
+        $precio = $_POST['precio'];
+        $descripcion = $_POST['descripcion'];
+        $Usuarios_id = $_POST['Usuarios_id'];
 
         if(!$titulo){
             $errores[] = "Debes añadir un titulo.";           
@@ -43,42 +37,18 @@
             $errores[] = "Debes añadir un instalador.";           
         }
 
-        if(!$imagen['name'] || $imagen['error']){
-            $errores[] = 'la imagen es obligatoria.';
-        }
-
-        //Validar tamaño imagen(100kb máximos)
-        $medida = 1000 * 4000;
-
-        if($imagen['size'] > $medida){
-            $errores [] ='la Imagen es muy pesada';
-        }
+        
 
         //revisar que arreglo de errores este vacio.
         if(empty($errores)){
-
-        //Crear carpeta para las imagenes subidas.
-        $caepertaImagenes = '../../imagenes/';
-        //validador si la carpeta existe o no en la raiz del proyecto.
-        if(!is_dir($caepertaImagenes)){
-            mkdir($caepertaImagenes);
-        }
-
-        //generar el nombre unico de archivo y su extension.
-        $nombreImagen = md5( uniqid( rand(), true))."jpg";
-
-        //subir la imagen a la carpeta
-        move_uploaded_file($imagen['tmp_name'], $caepertaImagenes . $nombreImagen);
-
         //cargar valores a la base de datos.    
-        $query = " INSERT INTO instalaciones (titulo, precio,imagen,descripcion, Usuarios_id) 
-        VALUES('$titulo','$precio','$nombreImagen','$descripcion','$Usuarios_id') " ;
+        $query = " INSERT INTO instalaciones (titulo, precio,descripcion, Usuarios_id) VALUES('$titulo','$precio','$descripcion','$Usuarios_id') " ;
 
         $resultado = mysqli_query($db, $query);
 
         if($resultado){
             //redireccionamos para evitar duplicados.
-            header('location: /admin?resultado=1');
+            header('location: /admin');
         }
 
         }
@@ -100,7 +70,7 @@
         <?php endforeach;?>
 
 
-        <form class="formulario" method="POST" action="/admin/instalaciones/crear.php" enctype="multipart/form-data">
+        <form class="formulario" method="POST" action="/admin/instalaciones/crear.php">
 
             <fieldset>
                 <legend>
@@ -111,8 +81,8 @@
                 <label for="precio">Precio:</label>
                 <input type="number" id="precio" placeholder="precio de instalación"  name="precio" value="<?php echo $precio;?>">
                 <label for="imagen">Imagen:</label>
-                <input type="file" id="imagen" accept="image/jpeg , image/png" name="imagen" >
-                <label for="descripcion" >Descripción:</label>
+                <input type="file" id="imagen" accept="image/jpeg , image/png"  >
+                <label for="descripcion" >Decripción:</label>
                 <textarea id="descripcion"  name="descripcion"><?php echo $descripcion;?></textarea>
                 
             </fieldset>
