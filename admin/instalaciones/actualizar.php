@@ -87,6 +87,7 @@
             //subir la imagen a la carpeta
             move_uploaded_file($imagen['tmp_name'], $caepertaImagenes . $nombreImagen);
         }else{
+            // si no se crea una imagen nueva no se borrara y se mantendra la anterior.
             $nombreImagen = $instalacion['imagen'];
         }
 
