@@ -8,6 +8,12 @@
         flex-direction: row;
         justify-content: space-between;
     }
+
+    img{
+        height: 110px;
+        width: 300px;
+        margin: 0;
+    }
 }
 
 .navegacion {
@@ -24,7 +30,8 @@
     }
 
     a {
-        color: $blanco;
+        color: $grisHeader;
+        font-weight: $bold;
         text-decoration: none;
         font-size: 2.2rem;
         display: block;

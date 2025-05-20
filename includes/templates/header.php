@@ -14,7 +14,7 @@
         <div class="contenedor contenido-header">
             <div class="barra">
                 <a href="/">
-                    <img src="/build/img/Logo.svg" alt="">
+                    <img src="/build/img/logo blanco.svg" alt="">
                 </a>
 
                 <div class="mobile-menu">

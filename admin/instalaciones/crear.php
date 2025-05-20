@@ -3,6 +3,8 @@
     require '../../includes/config/database.php';
     $db = conectarDB();
 
+    //Consultar para obtener los instaladores.
+
     //arreglo para los errores.
     $errores = [];
 

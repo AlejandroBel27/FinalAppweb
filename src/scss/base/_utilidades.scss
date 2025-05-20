@@ -3,10 +3,19 @@
     margin-bottom: calc($separacion / 2);
 }
 .contenido-centrado {
-    max-width: 80rem;
+    max-width: 70rem;
 }
 
 .ver-todas{
     display: flex;
     justify-content: flex-end;
+}
+
+.imagen-entrada{
+    
+    img{
+        height: 500px;
+        width: 500px;
+        
+    }
 }

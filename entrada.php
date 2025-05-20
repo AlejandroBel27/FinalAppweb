@@ -3,7 +3,7 @@
     require 'includes/funciones.php';
     incluirTemplate('header');
 ?>
-    <main class="contenedor seccion contenido-centrado">
+    <main class="contenedor seccion contenido-centrado imagen-entrada">
         <h1>Instalacion camara sencilla </h1>
 
         <picture>
