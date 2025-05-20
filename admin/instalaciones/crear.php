@@ -4,7 +4,8 @@
     $db = conectarDB();
 
     //Consultar para obtener los instaladores.
-
+    $consulta = "SELECT * FROM usuarios";
+    $resultado = mysqli_query($db, $consulta);
     //arreglo para los errores.
     $errores = [];
 
@@ -44,6 +45,12 @@
         $query = " INSERT INTO instalaciones (titulo, precio,descripcion, Usuarios_id) VALUES('$titulo','$precio','$descripcion','$Usuarios_id') " ;
 
         $resultado = mysqli_query($db, $query);
+
+        if($resultado){
+            //redireccionamos para evitar duplicados.
+            header('location: /admin');
+        }
+
         }
         
     }
@@ -82,11 +89,12 @@
 
             <fieldset>
                 <legend>instalador</legend>
-                <select name="Usuarios_id" value="<?php echo $Usuarios_id?>">
+                <select name="Usuarios_id">
                     <option value="">--Seleccionar--</option>
-                    <option value="1">Alejandro</option>
-                    <option value="2">Jesus</option>
-                </select>
+                    <?php while($instalador = mysqli_fetch_assoc($resultado)): ?>
+                        <option <?php echo $Usuarios_id === $instalador['id'] ? 'selected' : ''; ?> value="<?php echo $instalador['id'];?>"><?php echo $instalador['nombres']. " " . $instalador['apellidos']; ?></option>
+                    <?php endwhile; ?>    
+                    </select>
             </fieldset>
 
             <input type="submit" value="Crear instalación" class="boton boton-morado-inline-block" >
