@@ -10,3 +10,11 @@
 .btn-verde{
     @include boton($verde,block)
 }
+
+.boton-rojo-block{
+    @include boton ($rojo, block);
+}
+
+.btn-amarillo{
+    @include boton($amarillo,block);
+}
