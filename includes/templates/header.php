@@ -29,6 +29,10 @@
 
                 </nav>
             </div>
-
+            <?php
+                if($inicio){
+                    echo "<h1>Siente la seguridad con SystemTech</h1>";
+                }
+            ?>
         </div>
     </header>
