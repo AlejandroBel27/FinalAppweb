@@ -10,24 +10,21 @@
             <div class="icono">
                 <img src="build/img/security-shield_icon-icons.com_68133.svg" alt="Seguridad" loading="lazy">
                 <h3>Seguridad</h3>
-                <p>Sit perferendis explicabo blanditiis totam!
-                    Deleniti asperiores fugit iusto ullam, debitis in voluptatem recusandae dolor, deserunt distinctio
-                    dolores aliquid tempora, quis tenetur.</p>
+                <p>En SystemTech, tu seguridad es nuestra prioridad. Utilizamos equipos de alta tecnología y técnicas de instalación profesionales para garantizar 
+                    sistemas de videovigilancia confiables y eficientes, adaptados a tus necesidades.</p>
             </div>
             <div class="icono">
                 <img src="build/img/cctvcamerasecuritysurveillancemornitoring_109771.svg" alt="Precio" loading="lazy">
                 <h3>Precios</h3>
-                <p>Sit perferendis explicabo blanditiis totam!
-                    Deleniti asperiores fugit iusto ullam, debitis in voluptatem recusandae dolor, deserunt distinctio
-                    dolores aliquid tempora, quis tenetur.</p>
+                <p>Ofrecemos soluciones accesibles y personalizadas sin comprometer la calidad. Nos adaptamos a tu presupuesto 
+                    con paquetes competitivos que brindan el mejor valor por tu inversión en seguridad y conectividad.</p>
             </div>
             <div class="icono">
                 <img src="build/img/clock_hour_minute_second_time_timer_watch_icon_123193.svg" alt="Tiempo"
                     loading="lazy">
                 <h3>Tiempo</h3>
-                <p>Sit perferendis explicabo blanditiis totam!
-                    Deleniti asperiores fugit iusto ullam, debitis in voluptatem recusandae dolor, deserunt distinctio
-                    dolores aliquid tempora, quis tenetur.</p>
+                <p>Sabemos que tu tiempo es valioso. Nuestro equipo trabaja con rapidez y 
+                    precisión para cumplir con los plazos acordados, garantizando instalaciones efectivas y sin demoras.</p>
             </div>
         </div>
     </main>

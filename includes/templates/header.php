@@ -1,3 +1,15 @@
+
+<?php
+
+    //verifica que la sesion ya sea creado sino la crea.
+    if(!isset($_SESSION)){
+        session_start();
+    }
+
+    $auth = $_SESSION['login'] ?? false;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +38,13 @@
                     <a href="/../../anuncios.php">Anuncios</a>
                     <a href="/../../blog.php">Blog</a>
                     <a href="/../../contacto.php">Contacto</a>
+                    <?php if($auth): ?>
+                        <a href="/../../cerrar-sesion.php">Cerrar Sesion</a>
+                        <a href="/../../admin/index.php">admin</a>
+                        <?php elseif(!$auth): ?>
+                            <a href="/../../login.php">Iniciar Sesion</a>
+                    <?php endif; ?>
+
 
                 </nav>
             </div>

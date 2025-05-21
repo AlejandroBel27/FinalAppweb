@@ -1,5 +1,12 @@
 <?php 
     
+    //valida que este autenticado.
+    require '../includes/funciones.php';
+    $auth = estaAutenticado();
+    if(!$auth){
+        header('location: /');
+    }
+
     //importar la conexion a BDA
     require '../includes/config/database.php';
     $db = conectarDB();
@@ -39,7 +46,6 @@
     }
 
     // incluye el template de header.php para que sea mas dinamico.
-    require '../includes/funciones.php';
     incluirTemplate('header');
 ?>
 
